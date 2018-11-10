@@ -1,0 +1,24 @@
+# Datathon for the Transgender Day of Rememberance
+
+The Transgender Day of Remembrance (TDoR), observed annually on 20 November, memorializes those who were 
+killed or lost to suicide as a result of anti-transgender hatred or prejudice in the past year.
+
+We are holding a non-competitive datathon centred on the data collected by monitoring bodies and trans 
+activists about relevant deaths, as collated for recent years on https://tdor.translivesmatter.info/. 
+This repository will be used to share ideas and potentially host code and other documents generated as 
+part of the datathon.
+
+The main event will be hosted by the Cardiff R User Group on Saturday 17 November, 10:30am to 4:30pm, 
+where we will welcome the maintainer of tdor.translivesmatter.info as an invited participant, see 
+[further details on Meetup](https://www.meetup.com/Cardiff-R-User-Group/events/256116362/). 
+
+The datathon is supported by Forwards (https://forwards.github.io/) and Rainbow R (who are hosting this 
+repository!). We welcome remote participants
+ - watch this repo for updates
+ - reply to https://twitter.com/plzbeemyfriend/status/1060598224438939648 if you would like to meetup in 
+ Washington DC to work on this
+ - contact @R_Forwards on Twitter if you would like to join a Skype call towards the end of the Cardiff
+ datathon to discuss on-going tasks and how you might contribute - exact time TBD
+
+
+
