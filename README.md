@@ -13,12 +13,15 @@ where we will welcome the maintainer of tdor.translivesmatter.info as an invited
 [further details on Meetup](https://www.meetup.com/Cardiff-R-User-Group/events/256116362/). 
 
 The datathon is supported by Forwards (https://forwards.github.io/) and Rainbow R (who are hosting this 
-repository!). We welcome remote participants
+repository!). We welcome remote participants:
  - watch this repo for updates
  - reply to https://twitter.com/plzbeemyfriend/status/1060598224438939648 if you would like to meetup in 
  Washington DC to work on this
  - contact @R_Forwards on Twitter if you would like to join a Skype call towards the end of the Cardiff
  datathon to discuss on-going tasks and how you might contribute - exact time TBD
 
+For the story behind tdor.translivesmatter.info, see this [Medium post](https://medium.com/@annajayne/tdor-learning-more-about-those-we-have-lost-8043146f402c).
 
+For an intro the datathon, see [these slides](https://docs.google.com/presentation/d/1PNMa6LmjsofR8FUrnXHnwdMrvxTrBMZU2Lh8DQrsmr0/edit#slide=id.g47d8b045e7_1_0) 
+which will presented at the start of the Cardiff event to kick things off!
 
