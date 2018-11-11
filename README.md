@@ -17,7 +17,7 @@ repository!). We welcome remote participants:
  - watch this repo for updates
  - reply to https://twitter.com/plzbeemyfriend/status/1060598224438939648 if you would like to meetup in
  Washington DC to work on this
- - join *tdor-2018* channel in the RainbowR Slack group. You can join the group and collaborate with the global community by first completing [RainbowR's Code of Conduct](http://rainbowr.herokuapp.com/)
+ - join the **tdor-2018** channel in the RainbowR Slack group. You can join the group and collaborate with the global community by first completing [RainbowR's Code of Conduct](http://rainbowr.herokuapp.com/)
  - read the [issues page of the event's GitHub](https://github.com/rlgbtq/TDoR2018/issues) repository to find ways to contribute  
  - contact @R_Forwards on Twitter if you would like to join a Skype call towards the end of the Cardiff
  datathon to discuss on-going tasks and how you might contribute - exact time TBD
