@@ -9,21 +9,15 @@ header <- dashboardHeader(
 
 sidebar <- dashboardSidebar(
   sidebarMenu(
-    menuItem("Dashboard", tabName = "dashboard", icon = icon("dashboard")),
+    menuItem("Trigger Warning", tabName = "triggerWarning", icon = icon("exclamation-triangle")),
     menuItem("Widgets", tabName = "widgets", icon = icon("th"))
   )
 )
 
 body <- dashboardBody(
   tabItems(
-    tabItem(tabName="dashboard",
-            fluidRow(
-              box(plotOutput("plot1",height=250)),
-              box(
-                title = "Controls",
-                sliderInput("slider","Number of observations:",1,100,50)
-              )
-            )
+    tabItem(tabName="triggerWarning",
+            h1("TRIGGER WARNING: VIOLENCE. MURDER")
     ),
     
     tabItem(tabName="widgets",
