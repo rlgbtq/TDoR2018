@@ -17,7 +17,10 @@ sidebar <- dashboardSidebar(
 body <- dashboardBody(
   tabItems(
     tabItem(tabName="triggerWarning",
-            h1("TRIGGER WARNING: VIOLENCE. MURDER")
+            h1("TRIGGER WARNING: VIOLENCE. MURDER"),
+            h4("This dashboard provides a way to interactively explore the data on killings and suicides of transgender people, as memorialized in the Transgender Day of Remembrance 2007-2018."),
+            h4("This data can be accessed via the R package tdor: https://github.com/CaRdiffR/tdor"),
+            h4("More information can be found here: https://tdor.translivesmatter.info/")
     ),
     
     tabItem(tabName="contribute",
@@ -30,8 +33,9 @@ body <- dashboardBody(
             h4("3c. Add plots to server function."),
             h4("4. Submit a pull request."),
             h4("More guidance on shinydashboard here: https://rstudio.github.io/shinydashboard/"),
-            h4("More guidance on GitHub logistics here: https://help.github.com/articles/creating-a-pull-request-from-a-fork/")
-            
+            h4("More guidance on GitHub logistics here: https://help.github.com/articles/creating-a-pull-request-from-a-fork/"),
+            h2("How to Contribute in Other Ways"),
+            h4("Check out the issues here: https://github.com/rlgbtq/TDoR2018")
     )
   )
 )
@@ -39,7 +43,8 @@ body <- dashboardBody(
 ui <- dashboardPage(
         header,
         sidebar,
-        body
+        body,
+        skin="red"
     
 )
 
