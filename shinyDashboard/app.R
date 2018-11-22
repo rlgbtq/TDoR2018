@@ -1,5 +1,11 @@
 library(shiny)
 library(shinydashboard)
+library(tdor)
+#https://bhaskarvk.github.io/user2017.geodataviz/notebooks/03-Interactive-Maps.nb.html#using_rbokeh
+#library(maps)
+#library(rbokeh) 
+#library(widgetframe) 
+library(leaflet)
 
 header <- dashboardHeader(
   
@@ -10,6 +16,7 @@ header <- dashboardHeader(
 sidebar <- dashboardSidebar(
   sidebarMenu(
     menuItem("Trigger Warning", tabName = "triggerWarning", icon = icon("exclamation-triangle")),
+    menuItem("Map",tabName="map",icon=icon("globe")),
     menuItem("How to Contribute", tabName = "contribute", icon = icon("hand-holding-heart"))
   )
 )
@@ -21,6 +28,17 @@ body <- dashboardBody(
             h4("This dashboard provides a way to interactively explore the data on killings and suicides of transgender people, as memorialized in the Transgender Day of Remembrance 2007-2018."),
             h4("This data can be accessed via the R package tdor: https://github.com/CaRdiffR/tdor"),
             h4("More information can be found here: https://tdor.translivesmatter.info/")
+    ),
+    
+    tabItem(tabName="map",
+            
+            selectInput("selectCountry", 
+                               h3("Select country"), 
+                               c("All",unique(tdor$Country))),
+            dateRangeInput("selectDate",h3("Select date range"),start=min(tdor$Date),end=max(tdor$Date),min=min(tdor$Date),max=max(tdor$Date)),
+            #widgetframeOutput("plot1")
+            #plotOutput("plot1")
+            leafletOutput("plot1")
     ),
     
     tabItem(tabName="contribute",
@@ -50,12 +68,42 @@ ui <- dashboardPage(
 
 server <- function(input, output) { 
   
-  set.seed(122)
-  histdata <- rnorm(500)
-  
-  output$plot1 <- renderPlot({
-    data <- histdata[seq_len(input$slider)]
-    hist(data)
+
+  #renderWidgetframe
+  #renderPlot
+  output$plot1 <- renderLeaflet({
+    if(input$selectCountry=="All"){
+      data=tdor
+      names(data)=gsub(" ",".",names(tdor))
+      data=subset(data,Date >= input$selectDate[1] & Date <=input$selectDate[2])
+    }else{
+      data=subset(tdor,Country==input$selectCountry)
+      names(data)=gsub(" ",".",names(tdor))
+      data=subset(data,Date >= input$selectDate[1] & Date <=input$selectDate[2])
+    }
+   
+    # plot <- suppressWarnings(
+    #           figure(
+    #                 width = 800, height = 450,
+    #                 padding_factor = 0) %>%
+    #                 ly_map("world", col = "gray") %>%
+    #                 ly_points(Longitude, Latitude, data = data, size = 5,
+    #                 hover = c(Name, Age,Date,Location,Cause.of.death )))
+    # plot
+    
+    ## figure out how to do the url, pictures?
+    
+    
+    p <- leaflet(data =data) %>% 
+      addProviderTiles(providers$CartoDB.Positron) %>% 
+      addMarkers(~Longitude, ~Latitude,
+          popup=paste(data$Name, "<br>",
+                      "Age ", data$Age, "<br>",
+                      data$Date, "<br>",
+                      data$Location, "<br>",
+                      data$Cause.of.death,sep="")
+                                                                                          )
+    p
   })
   
   }
