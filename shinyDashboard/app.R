@@ -10,7 +10,7 @@ header <- dashboardHeader(
 sidebar <- dashboardSidebar(
   sidebarMenu(
     menuItem("Trigger Warning", tabName = "triggerWarning", icon = icon("exclamation-triangle")),
-    menuItem("Widgets", tabName = "widgets", icon = icon("th"))
+    menuItem("How to Contribute", tabName = "contribute", icon = icon("hand-holding-heart"))
   )
 )
 
@@ -20,8 +20,16 @@ body <- dashboardBody(
             h1("TRIGGER WARNING: VIOLENCE. MURDER")
     ),
     
-    tabItem(tabName="widgets",
-            h2("Widgets tab content")
+    tabItem(tabName="contribute",
+            h2("How to Contribute to This Dashboard"),
+            h4("1. Fork the repository: https://github.com/rlgbtq/TDoR2018"),
+            h4("2. Clone the fork to your workspace."),
+            h4("3. Make changes to shinyDashboard/app.R"),
+            h4("3a. Create a new menuItem in the sidebar function."),
+            h4("3b. Create a new tabItem in the body function. Make sure tabName is equivalent to the tabName you specified in menuItem."),
+            h4("3c. Add plots to server function."),
+            h4("4. Submit a pull request.")
+            
             
     )
   )
