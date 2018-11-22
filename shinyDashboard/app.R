@@ -97,7 +97,7 @@ server <- function(input, output) {
     p <- leaflet(data =data) %>% 
       addProviderTiles(providers$CartoDB.Positron) %>% 
       addMarkers(~Longitude, ~Latitude,
-          popup=paste(data$Name, "<br>",
+          popup=paste("<a href = ",data$Permalink,">", data$Name,"</a> <br>",
                       "Age ", data$Age, "<br>",
                       data$Date, "<br>",
                       data$Location, "<br>",
