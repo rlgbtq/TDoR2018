@@ -28,8 +28,9 @@ body <- dashboardBody(
             h4("3a. Create a new menuItem in the sidebar function."),
             h4("3b. Create a new tabItem in the body function. Make sure tabName is equivalent to the tabName you specified in menuItem."),
             h4("3c. Add plots to server function."),
-            h4("4. Submit a pull request.")
-            
+            h4("4. Submit a pull request."),
+            h4("More guidance on shinydashboard here: https://rstudio.github.io/shinydashboard/"),
+            h4("More guidance on GitHub logistics here: https://help.github.com/articles/creating-a-pull-request-from-a-fork/")
             
     )
   )
