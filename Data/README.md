@@ -7,11 +7,11 @@ This repository holds raw data on deaths of transgender people by violence, suic
 
 ## Keywords
 
-The file `keywords.csv` contains a set of keywords that we aim to translate to different languages.
+The file `keywords.csv` contains a set of keywords that we aim to translate to different languages, to help search for cases to add to the TDoR dataset.
 
-### CONTRIBUTING
+### Contributing keyword translations
 
-We welcome translations from people who are fluent in the target language. Please do not submit a machine translation, a dictionary translation or a translation for a language you are not fluent in, as we are aiming for high quality translations that reflect the equivalent words that would be used in practice (in online media, social media, etc).
+We welcome keyword translations from people who are fluent in the target languages. Please do not submit a machine translation, a dictionary translation or a translation for a language you are not fluent in, as we are aiming for high quality translations that reflect the equivalent words that would be used in practice (in online media, social media, etc).
 
 View `keywords.csv` on Github to check if the languages you are fluent in have been covered (if you click on `keywords.csv` above, you can view the file as an HTML table). If you can contribute a missing translation, please follow the instructions below. If you want to contribute a translation for a language that is not listed, please raise this on the issue page: https://github.com/rlgbtq/TDoR2018/issues/14.
 
