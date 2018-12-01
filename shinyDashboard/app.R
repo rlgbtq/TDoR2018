@@ -41,13 +41,16 @@ body <- dashboardBody(
             
             selectInput("selectCountry", 
                         h3("Select country"), 
-                        c("All",unique(tdor$Country))),
+                        c("All",sort(unique(tdor$Country)))),
+           HTML("<br>"),
+           HTML("<br>"),
+           HTML("<br>"),
             dateRangeInput("selectDate",h3("Select date range"),
                            start = min(tdor$Date), end = max(tdor$Date),
                            min = min(tdor$Date), max = max(tdor$Date)),
             #widgetframeOutput("plot1")
             #plotOutput("plot1")
-            leafletOutput("map")
+            leafletOutput("map",height=500,width=750)
     ),
     
     tabItem(tabName="summaries",
@@ -97,10 +100,13 @@ server <- function(input, output) {
       data=tdor
       names(data)=gsub(" ",".",names(tdor))
       data=subset(data,Date >= input$selectDate[1] & Date <=input$selectDate[2])
+      data$photoURL=paste("https://bytebucket.org/annajayne/tdor_data/raw/default/Data/TDoR%20",data$Year,"/photos/",data$Photo,sep="")
+     
     }else{
       data=subset(tdor,Country==input$selectCountry)
       names(data)=gsub(" ",".",names(tdor))
       data=subset(data,Date >= input$selectDate[1] & Date <=input$selectDate[2])
+      data$photoURL=paste("https://bytebucket.org/annajayne/tdor_data/raw/default/Data/TDoR%20",data$Year,"/photos/",data$Photo,sep="")
     }
    
     # plot <- suppressWarnings(
@@ -117,14 +123,22 @@ server <- function(input, output) {
     ## add images 
     ## https://github.com/CaRdiffR/tdor/issues/3
     
+    
     p <- leaflet(data =data) %>% 
       addProviderTiles(providers$CartoDB.Positron) %>% 
       addMarkers(~Longitude, ~Latitude,
-          popup=paste("<a href = ",data$Permalink,">", data$Name,"</a> <br>",
+          popup=paste(
+            "<a href = ",data$Permalink,">", data$Name,"</a> <br>",
                       "Age ", data$Age, "<br>",
                       data$Date, "<br>",
                       data$Location, "<br>",
-                      data$Cause.of.death,sep="")
+                      data$Cause.of.death, "<br>",
+                      "<img src = ",
+                      data$photoURL,
+                      " width=75% ",
+                      ">", ## will display an icon if no photo
+                      
+                      sep="")
                                                                                           )
     p
     
@@ -177,3 +191,4 @@ server <- function(input, output) {
   } ## end server
 
 shinyApp(ui, server) ## run the app
+
